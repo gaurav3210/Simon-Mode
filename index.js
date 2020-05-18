@@ -11,11 +11,15 @@ function playSound(name){
   audio.play();
 
 }
+function animatePress(currentColor){
+  $("#"+currentColor).addClass("pressed");
+  setTimeout(function(){
+    $("#"+currentColor).removeClass("pressed");
 
+  },100);
+}
 function newSequence(){
   userClickedPattern = [];
-  level+=1;
-   $("#level-title").text("LEVEL "+ level);
    var randomNumber = Math.floor(Math.random()*4);
    var randomChosenColor = buttonColors[randomNumber];
   gamePattern.push(randomChosenColor);
