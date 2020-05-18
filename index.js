@@ -1,5 +1,4 @@
-//alert("Hello");
-//$("h1").text("Triggerd jquery");
+
 var buttonColors = ['red','blue','green','yellow'];
 var gamePattern = [];
 var userClickedPattern = [];
@@ -15,7 +14,7 @@ $("#level-title").text("Press A Key to Start");
 }
 
 $(document).keydown(function(event){
-  //console.log(event.key);
+
 
   if(event.key=='a')
    {if(gameStart==false){
@@ -28,7 +27,7 @@ $(document).keydown(function(event){
 function checkAnswer(currentLevel)
 {
    if(gamePattern[currentLevel] == userClickedPattern[currentLevel]){
-     console.log("success");
+
      if(userClickedPattern.length == gamePattern.length){
        setTimeout(function(){
          newSequence();
@@ -36,7 +35,7 @@ function checkAnswer(currentLevel)
      }
    }
    else {
-     console.log("wrong");
+
      playSound("wrong");
      $("body").addClass("game-over");
      $("#level-title").text("GAME OVER. PRESS R KEY TO RESTART");
@@ -73,31 +72,7 @@ function newSequence(){
  playSound(randomChosenColor);
 
 }
-// var userChosenColor;
-// $("#green").click(function(){
-//   userChosenColor = "green";
-//   playSound(userChosenColor);
-//   animatePress(userChosenColor);
-//   userClickedPattern.push(userChosenColor);
-// });
-// $("#red").click(function(){
-//   userChosenColor = "red";
-//     playSound(userChosenColor);
-//     animatePress(userChosenColor);
-//   userClickedPattern.push(userChosenColor);
-// });
-// $("#blue").click(function(){
-//   userChosenColor="blue";
-//     playSound(userChosenColor);
-//     animatePress(userChosenColor);
-//   userClickedPattern.push(userChosenColor);
-// });
-// $("#yellow").click(function(){
-//   userChosenColor="yellow";
-//     playSound(userChosenColor);
-//     animatePress(userChosenColor);
-//   userClickedPattern.push(userChosenColor);
-// });
+
 $(".btn").click(function(){
   var chosenColor=$(this).attr("id");
   userClickedPattern.push(chosenColor);
