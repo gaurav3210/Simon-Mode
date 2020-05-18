@@ -5,7 +5,25 @@ var gamePattern = [];
 var userClickedPattern = [];
 var level = 0;
 var gameStart = false;
+function freshStart()
+{
+  gameStart=false;
+  level=0;
+  gamePattern = [];
+  userClickedPattern =[];
+$("#level-title").text("Press A Key to Start");
+}
 
+$(document).keydown(function(event){
+  //console.log(event.key);
+  if(event.key=='a')
+   {if(gameStart==false){
+     gameStart=true;
+     $("#level-title").text("LEVEL "+level);
+     newSequence();
+   }
+   }
+});
 function playSound(name){
   var audio = new Audio("sounds/"+name+".mp3");
   audio.play();
