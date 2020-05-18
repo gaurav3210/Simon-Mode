@@ -27,3 +27,35 @@ function newSequence(){
  playSound(randomChosenColor);
 
 }
+// var userChosenColor;
+// $("#green").click(function(){
+//   userChosenColor = "green";
+//   playSound(userChosenColor);
+//   animatePress(userChosenColor);
+//   userClickedPattern.push(userChosenColor);
+// });
+// $("#red").click(function(){
+//   userChosenColor = "red";
+//     playSound(userChosenColor);
+//     animatePress(userChosenColor);
+//   userClickedPattern.push(userChosenColor);
+// });
+// $("#blue").click(function(){
+//   userChosenColor="blue";
+//     playSound(userChosenColor);
+//     animatePress(userChosenColor);
+//   userClickedPattern.push(userChosenColor);
+// });
+// $("#yellow").click(function(){
+//   userChosenColor="yellow";
+//     playSound(userChosenColor);
+//     animatePress(userChosenColor);
+//   userClickedPattern.push(userChosenColor);
+// });
+$(".btn").click(function(){
+  var chosenColor=$(this).attr("id");
+  userClickedPattern.push(chosenColor);
+  playSound(chosenColor);
+  animatePress(chosenColor);
+
+});
